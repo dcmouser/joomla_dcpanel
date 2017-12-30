@@ -1,0 +1,19 @@
+/* see https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Columns/Using_multi-column_layouts
+see https://stackoverflow.com/questions/7785374/how-to-prevent-column-break-within-an-element
+ */
+
+.dccpanel_outer {
+  -moz-column-count: 2;
+  -webkit-column-count: 2;
+  column-count: 2;
+}
+
+.dccpanel_module {
+	border: 1px solid;
+	padding: 10px;
+
+    -webkit-column-break-inside: avoid; /* Chrome, Safari */
+    page-break-inside: avoid;           /* Theoretically FF 20+ */
+    break-inside: avoid-column;         /* IE 11 */
+    display:table;                      /* Actually FF 20+ */
+}
